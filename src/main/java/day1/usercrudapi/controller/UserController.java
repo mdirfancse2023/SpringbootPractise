@@ -23,4 +23,14 @@ public class UserController {
     public void login(@PathVariable Long id){
         userService.getUser(id);
     }
+
+    @PatchMapping("/update/{id}")
+    public void update(@PathVariable Long id, @RequestBody User user){
+        userService.updateUser(id, user);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id){
+        userService.deleteUser(id);
+    }
 }
